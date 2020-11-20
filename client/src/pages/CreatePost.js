@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TextInput from "../components/TextInput";
 import { __UploadPost } from "../services/PostServices";
 import "../styles/Post.css";
-import Avatar from "@material-ui/core/Avatar";
+// import Avatar from "@material-ui/core/Avatar";
 export default class CreatePost extends Component {
   constructor() {
     super();
@@ -29,11 +29,11 @@ export default class CreatePost extends Component {
     return (
       <div className="post">
         <div className="post__header">
-          <Avatar
+          {/* <Avatar
             className="post__avatar"
             alt={name}
             src="/static/images/avatar/1.jpg"
-          />
+          /> */}
           <div className="upload content">
             <form className="flex-col" onSubmit={this.handleSubmit}>
               <TextInput

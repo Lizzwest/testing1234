@@ -73,9 +73,9 @@ class Router extends Component {
               path="/"
               component={(props) => <LandingPage {...props} />}
             />
-            <ProtectedRoute
+            <Route
               authenticated={this.state.authenticated}
-              path="/feed/:user_id"
+              path="/feed"
               component={(props) => (
                 <Home
                   currentUser={this.state.currentUser}

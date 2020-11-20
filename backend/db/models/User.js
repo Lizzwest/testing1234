@@ -3,8 +3,8 @@ const { Schema } = require("mongoose");
 module.exports = new Schema(
   {
     name: {
-      type: String,
-      required: true,
+      type: String
+    
     },
     email: {
       type: String,

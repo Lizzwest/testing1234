@@ -15,6 +15,7 @@ export default class SignIn extends Component {
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value, formError: false });
+    console.log(this.state)
   };
 
   handleSubmit = async (e) => {
@@ -23,10 +24,11 @@ export default class SignIn extends Component {
       const loginData = await __LoginUser(this.state);
       console.log(loginData, "Login Data here");
       this.props.toggleAuthenticated(true, loginData.user, () =>
-        this.props.history.push("/feed/:user_id")
+        this.props.history.push("/feed")
       );
     } catch (error) {
-      this.setState({ formError: true });
+      this.setState({ formError: true })
+      console.log(error);
     }
   };
 
@@ -35,7 +37,7 @@ export default class SignIn extends Component {
     return (
       <div className="app">
         <Nav />
-        <form className="app__login">
+        <form className="app__login" onSubmit={this.handleSubmit}>
           <center>
             <img
               className="app__headerImage"
@@ -46,7 +48,7 @@ export default class SignIn extends Component {
           <TextInput
             placeholder="email"
             name="email"
-            type="text"
+            type="email"
             value={email}
             onChange={this.handleChange}
           />
