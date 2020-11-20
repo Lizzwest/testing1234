@@ -34,7 +34,7 @@ export default class SignUp extends Component {
     return (
       <div className="app">
         <Nav />
-        <form className="app__login">
+        <form className="app__login" onSubmit={this.handleSubmit}>
           <center>
             <img
               className="app__headerImage"

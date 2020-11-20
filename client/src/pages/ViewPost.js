@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { __GetPosts } from "../services/PostServices";
 // import Avatar from "@material-ui/core/Avatar";
 
-export default class Discover extends Component {
+export default class ViewPost extends Component {
   constructor() {
     super();
     this.state = {

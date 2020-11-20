@@ -38,13 +38,13 @@ export default class Profile extends Component {
 
   render() {
     return (
-      <div className="profile">
+      <div className="post">
         <div>
           {this.state.posts.length ? (
-            <div className="post-content wrapper flex-row">
+            <div className="post__commentBox">
               {this.state.posts.map((post) => (
                 <div key={post._id}>
-                  <div className="flex-row button-wrapper">
+                  <div className="post__image">
                     <button
                       onClick={() =>
                         this.props.history.push(`/edit/${post._id}`)
