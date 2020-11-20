@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { __CheckSession } from "../services/UserServices";
 import Home from "../pages/Home";
+import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
 import ProtectedRoute from "./ProtectedRoute";
 import Layout from "../components/Layout";
 import Profile from "../pages/Profile";
 import UpdatePost from "../pages/UpdatePost";
+import LandingPage from "../pages/LandingPage";
 // import Update from "../pages/UpdatePost";
 // import Post from "./components/Post";
 // import ImageUpload from "./components/ImageUpload";
@@ -53,28 +55,34 @@ class Router extends Component {
           <h3>Loading...</h3>
         ) : (
           <Switch>
-            <Route exact path="/" component={() => <Home />} />
             <Route
               path="/login"
               component={(props) => (
-                
-                  <SignIn
-                    toggleAuthenticated={this.toggleAuthenticated}
-                    {...props}
-                  />
-               
+                <SignIn
+                  toggleAuthenticated={this.toggleAuthenticated}
+                  {...props}
+                />
               )}
+            />
+            <Route
+              path="/register"
+              component={(props) => <SignUp {...props} />}
+            />
+            <Route
+              exact
+              path="/"
+              component={(props) => <LandingPage {...props} />}
             />
             <ProtectedRoute
               authenticated={this.state.authenticated}
-              path="/profile"
+              path="/feed/:user_id"
               component={(props) => (
-                <Layout
+                <Home
                   currentUser={this.state.currentUser}
                   authenticated={this.state.authenticated}
                 >
                   <Profile {...props} currentUser={this.state.currentUser} />
-                </Layout>
+                </Home>
               )}
             />
             <ProtectedRoute

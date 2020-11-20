@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TextInput from "../components/TextInput";
+import Nav from "../components/Nav";
 import { __RegisterUser } from "../services/UserServices";
 import "../styles/App.css";
 
@@ -32,6 +33,7 @@ export default class SignUp extends Component {
     const { name, password, email } = this.state;
     return (
       <div className="app">
+        <Nav />
         <form className="app__login">
           <center>
             <img
@@ -42,18 +44,21 @@ export default class SignUp extends Component {
           </center>
           <TextInput
             type="text"
+            name="name"
             placeholder="username"
             value={name}
             onChange={this.handleChange}
           />
           <TextInput
             placeholder="email"
+            name="email"
             type="text"
             value={email}
             onChange={this.handleChange}
           />
           <TextInput
             placeholder="password"
+            name="password"
             type="password"
             value={password}
             onChange={this.handleChange}

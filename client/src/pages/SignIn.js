@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TextInput from "../components/TextInput";
+import Nav from "../components/Nav";
 import { __LoginUser } from "../services/UserServices";
 
 export default class SignIn extends Component {
@@ -22,7 +23,7 @@ export default class SignIn extends Component {
       const loginData = await __LoginUser(this.state);
       console.log(loginData, "Login Data here");
       this.props.toggleAuthenticated(true, loginData.user, () =>
-        this.props.history.push("/profile")
+        this.props.history.push("/feed/:user_id")
       );
     } catch (error) {
       this.setState({ formError: true });
@@ -33,6 +34,7 @@ export default class SignIn extends Component {
     const { email, password } = this.state;
     return (
       <div className="app">
+        <Nav />
         <form className="app__login">
           <center>
             <img

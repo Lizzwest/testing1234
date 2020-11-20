@@ -43,7 +43,9 @@ export default class Discover extends Component {
               onClick={() => this.props.history.push(`/posts/${post._id}`)}
               className="post__header"
             >
-              <h2>{post.username} </h2>
+              <h2>{post.caption} </h2>
+              <h2>{post.image} </h2>
+              <h2>{post.comments} </h2>
             </div>
           ))
         ) : (

@@ -25,7 +25,7 @@ export default class CreatePost extends Component {
     }
   };
   render() {
-    const { name, caption, image, comments } = this.state;
+    const { name, caption, image } = this.state;
     return (
       <div className="post">
         <div className="post__header">

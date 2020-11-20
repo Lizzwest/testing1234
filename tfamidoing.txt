@@ -3,3 +3,64 @@
 finish router
 create landingpage(login/signup) and home(all posts)
 create nav
+
+// CreatePost.js
+// <TextInput
+              //   fieldType="textfield"
+              //   placeholder="Comments"
+              //   name="comments"
+              //   value={comments}
+              //   onChange={this.handleChange}
+              // />
+
+// ViewPosts
+              // <div className="post__comments">
+        //   {post.comments.map((post.comment) => (
+        //     <p>
+        //       <b>{post.comment.username}</b> {comment.text}
+        //     </p>
+        //   ))}
+        // </div>
+
+        {user && (
+          <form className="post__commentBox">
+            <input
+              className="post__input"
+              type="text"
+              placeholder="Add a comment..."
+              value={comment}
+            />
+            <button disabled={!comment} className="post__button" type="submit">
+              Post
+            </button>
+          </form>
+        )}
+      </div>
+    );
+  }
+}
+
+
+
+<h3>{post.username}</h3>
+            </div>
+            <img className="post__image" src={post.imageUrl} alt="post" />
+            <h4 className="post__text">
+            {post.username} 
+            <span className="post__caption">{caption}</span>
+            </h4>
+            <div className="update-post">
+            </div>
+
+
+
+
+<Avatar
+            className="post__avatar"
+            alt={post.username}
+            src="/static/images/avatar/1.jpg"
+            />
+
+
+// Router
+<Route exact path="/" component={() => <Home />} />
