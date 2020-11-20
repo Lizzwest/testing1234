@@ -57,12 +57,12 @@ class Router extends Component {
             <Route
               path="/login"
               component={(props) => (
-                <Home>
+                
                   <SignIn
                     toggleAuthenticated={this.toggleAuthenticated}
                     {...props}
                   />
-                </Home>
+               
               )}
             />
             <ProtectedRoute

@@ -43,22 +43,24 @@ export default class SignIn extends Component {
           </center>
           <TextInput
             placeholder="email"
+            name="email"
             type="text"
             value={email}
             onChange={this.handleChange}
           />
           <TextInput
             placeholder="password"
+            name="password"
             type="password"
             value={password}
             onChange={this.handleChange}
           />
           <button>Login</button>
-          {this.state.formError ? (
+          {this.state.formError ? 
             <p>Dawg you can't log in wtf bro</p>
-          ) : (
+          : 
             <p></p>
-          )}
+          }
         </form>
       </div>
     );

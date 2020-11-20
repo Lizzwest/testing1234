@@ -18,9 +18,11 @@ export default class Discover extends Component {
   getPosts = async () => {
     try {
       const posts = await __GetPosts(this.state.currentPage);
+      console.log(posts)
       this.setState({ posts: [...this.state.posts, ...posts] });
+      console.log(posts, "second")
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 

@@ -8,7 +8,7 @@ const Pusher = require("pusher");
 const connection = require("./db/connection");
 const Schema = require("./db/schema");
 // app config
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3012;
 const app = express();
 
 const pusher = new Pusher({
